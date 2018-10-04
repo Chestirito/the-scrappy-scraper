@@ -46,9 +46,10 @@ $(function(){
         if (data.note) {
           
           //console.log(data.note);
+          $(".allNotes").append("<ul class='noteList list-group list-group-flush'>");
           $.each(data.note, function(key, value){
-            $(".allNotes").append("<div class='singleNote'>"+ value.body +
-            "<button data-id='" + value._id + "' class='deleteNote btn btn-danger'>X</button></div>");
+            $(".noteList").append("<li class='singleNote list-group-item'>"+ value.body +
+            "<button data-id='" + value._id + "' class='deleteNote float-right btn btn-danger'>X</button></li>");
           })
         }
       });
