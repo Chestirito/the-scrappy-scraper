@@ -1,16 +1,33 @@
 <script src="./javascripts/home.js"></script>
-<h1>Scrapper</h1>
-<h2>Welcome to Scrappy Scrapper</h2>
+
+<div class="titleBox d-flex align-items-center">
+    <h1 class="boxTitle">Welcome to Scrappy Scrapper</h1>
+</div>
+
 <div id="wrapper">
-    <h1>Note Scraper</h1>
-    <button class="btn btn-primary scrape" data-toggle="modal" data-target="#scraped">Scrape</button>
+    <div class="card text-center">
+        <div class="card-body">
+            <button class="btn btn-primary scrape btn-lg btn-block" data-toggle="modal" data-target="#scraped">Scrape</button>
+        </div>
+    </div>
     <div id="articles">
         {{#each articles}}
-            <div class="article">
-                <p>{{title}}</p>
+            <div class="article my-2">
+                {{!-- <p>{{title}}</p>
                 <p>{{summary}}</p>
                 <p>{{link}}</p>
-                <button class="save btn btn-primary" data-id={{_id}}>Save Article</button>
+                <button class="save btn btn-primary" data-id={{_id}}>Save Article</button> --}}
+
+                <div class="card">
+                    <div class="card-header">
+                        <p class="float-left headline">{{title}}</p>
+                        <button class="save btn btn-primary float-right" data-id={{_id}}>Save Article</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{summary}}</p>
+                        <p class="card-title">{{link}}</p>
+                    </div>
+                </div>
             </div>
         {{/each}}
     </div>

@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -15,11 +14,48 @@ body {
   width: 60%;
   height: 700px;
 } */
-
+.titleBox{
+  background-image: url("../images/title.png");
+  height: 70vh;
+}
+.boxTitle{
+  color: white;
+  margin: 0 auto;
+}
+#wrapper{
+  margin: 20px;
+}
+.card .card-header{
+  background-color: #460f704f;
+}
+.headline{
+  width: calc(100% - 114px);;
+  font-size: 2em;
+  
+}
+.btn-primary:not(:disabled):not(.disabled).active, 
+.btn-primary:not(:disabled):not(.disabled):active, 
+.show>.btn-primary.dropdown-toggle{
+  background-color: #349000;
+  border-color: #349000;
+  outline: none;
+  box-shadow: none;
+}
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.btn-primary{
+  background-color: #4eb215;
+  border-color: #389b00;
+}
+.btn-primary:hover{
+  background-color: #349000;
+  border-color: #349000;
+}
 textarea, input {
   display: block;
   width: 100%;
-  background-color: #FCF5C7;
 }
 input {
   height: 36px;

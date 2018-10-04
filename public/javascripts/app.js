@@ -22,8 +22,8 @@ $(function(){
     //console.log("jello");
     $("#notes").empty();
     
-    var thisId = $(this).parent().attr("data-id");
-    //console.log(thisId);
+    var thisId = $(this).parent().parent().parent().attr("data-id");
+    console.log(thisId);
     // Now make an ajax call for the Article
     $.ajax({
       method: "GET",
@@ -107,7 +107,7 @@ $(function(){
 
   //unsave article
   $(".article").on("click", ".unsave", function() {
-    var thisId = $(this).parent().attr("data-id");
+    var thisId = $(this).parent().parent().parent().attr("data-id");
     console.log(thisId);
     // Send the DELETE request.
     $.ajax("/articles/unsave/"+thisId, {

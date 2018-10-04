@@ -1,11 +1,11 @@
-<h1>Scrapper</h1>
-<h2>Welcome to Scrappy Scrapper</h2>
+<div class="titleBox d-flex align-items-center">
+    <h1 class="boxTitle">Saved Articles</h1>
+</div>
 <div id="wrapper">
-    <h1>Note Scraper</h1>
     <div id="articles">
         {{#each articles}}
             <div class="article" data-id={{_id}}>
-                <p>{{title}}</p>
+                {{!-- <p>{{title}}</p>
                 <p>{{summary}}</p>
                 <p>{{link}}</p>
                 <button type="button" class="btn btn-danger unsave">
@@ -13,7 +13,24 @@
                 </button>
                 <button type="button" class="btn btn-primary showcomment" data-toggle="modal" data-target="#comments">
                     Comments
-                </button>
+                </button> --}}
+
+                <div class="card">
+                    <div class="card-header">
+                        <p class="float-left headline">{{title}}</p>
+                        <button class="save btn btn-primary float-right" data-id={{_id}}>Save Article</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{summary}}</p>
+                        <p class="card-title">{{link}}</p>
+                        <button type="button" class="btn btn-danger unsave">
+                            Unsave
+                        </button>
+                        <button type="button" class="btn btn-primary showcomment" data-toggle="modal" data-target="#comments">
+                            Comments
+                        </button>
+                    </div>
+                </div>
             </div>
         {{/each}}
         
