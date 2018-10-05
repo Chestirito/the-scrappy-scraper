@@ -54,7 +54,14 @@ require("./routes/scrape")(app);
 /*app.use(function(req, res, next) {
   next(createError(404));
 });*/
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/unit18Populater";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+//mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 //mongoose.dropDatabase();
 // error handler
 /*
